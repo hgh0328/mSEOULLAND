@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>nav</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/main.css">
+    <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+    <!--    <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>-->
+    <script type="text/javascript" src="js/prefixfree.min.js"></script>
+    <script type="text/javascript" src="js/jquery-ui-1.10.3.custom.min.js"></script>
+    <script type="text/javascript" src="js/jquery.mousewheel.min.js"></script>
+    <script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
+
+    <script>
+        $(function() {
+
+            $(".member").click(function(e) {
+                e.preventDefault();
+                $(".member").addClass("on");
+                $(".news").removeClass("on");
+                $(".yearuse").removeClass("on");
+                $("#member").css({
+                    "display": "block"
+                });
+                $("#News").css({
+                    "display": "none"
+                });
+                $("#yearUse").css({
+                    "display": "none"
+                });
+            });
+
+            $(".news").click(function(e) {
+                e.preventDefault();
+                $(".member").removeClass("on");
+                $(".news").addClass("on");
+                $(".yearuse").removeClass("on");
+                $("#member").css({
+                    "display": "none"
+                });
+                $("#News").css({
+                    "display": "block"
+                });
+                $("#yearUse").css({
+                    "display": "none"
+                });
+            });
+
+            $(".yearuse").click(function(e) {
+                e.preventDefault();
+                $(".member").removeClass("on");
+                $(".news").removeClass("on");
+                $(".yearuse").addClass("on");
+                $("#member").css({
+                    "display": "none"
+                });
+                $("#News").css({
+                    "display": "none"
+                });
+                $("#yearUse").css({
+                    "display": "block"
+                });
+            });
+
+            $(".top_btn").click(function(e) {
+                e.preventDefault();
+                $("html, body").stop().animate({
+                    scrollTop: 0
+                }, 1000);
+            });
+
+            var menu = $("#top_menu > ul > li");
+            var contents = $("#content > div");
+
+            menu.click(function(event) {
+                event.preventDefault(); /*기존의 성질을 삭제*/
+
+                var tg = $(this);
+                var i = tg.index();
+
+                var section = contents.eq(i);
+                var tt = section.offset().top;
+
+
+
+                $('html, body').stop().animate({
+                    scrollTop: tt + 1
+                }, 1000);
+            });
+
+            $(document).scroll(function() {
+                var sct = $(document).scrollTop();
+
+                contents.each(function() {
+                    var tg = $(this);
+                    var i = tg.index();
+
+                    if (tg.offset().top <= sct) {
+                        menu.removeClass('onview');
+                        menu.eq(i).addClass('onview');
+
+                        if (i > 0) {
+                            $("#top_menu > ul").removeClass("menu_hide");
+                            $("#top_menu > ul").addClass("menu_show");
+                        }
+                        if (i <= 0) {
+                            $("#top_menu > ul").addClass("menu_hide");
+                            $("#top_menu > ul").removeClass("menu_show");
+                        }
+                    }
+
+                });
+            });
+
+            $(".sub3_image > li ").mouseenter(function() {
+                var tg = $(this);
+                var i = tg.index();
+                var num = i + 1;
+                $(".sub3_image > li > a > img").eq(i).attr({
+                    src: "images/3dan/3dan_" + "hover_" + "img" + num + ".png"
+                });
+                $(".pi_" + num).css({
+                    "opacity": "1",
+                    "transition": "0.4s"
+                });
+            });
+            $(".sub3_image > li ").mouseleave(function() {
+                var tg = $(this);
+                var i = tg.index();
+                var num = i + 1;
+                $(".sub3_image > li > a > img").eq(i).attr({
+                    src: "images/3dan/3dan_" + "img" + num + ".png"
+                });
+                $(".pi_" + num).css({
+                    "opacity": "0.7",
+                    "transition": "0.4s"
+                });
+
+            });
+
+
+            $(".Sub_Menu_List").hide();
+            $(".hover_bg").hide();
+            $("aside").hide();
+
+            $(".main_menu > li").on({
+                mouseenter: function() {
+                    var i = $(this).index();
+                    var num = i - 2;
+                    console.log(num);
+                    $(".main_menu > li > a >.hover_bg").eq(num).show();
+                    $(".main_menu > li > .Sub_Menu_List").eq(num).show(100);
+                    $(".menu_bg").stop().slideDown(100);
+                    $("aside").stop().show(100);
+                },
+                mouseleave: function() {
+                    var i = $(this).index();
+                    var num = i - 2;
+                    $(".main_menu > li > a >.hover_bg").eq(num).hide();
+                    $(".main_menu > li > .Sub_Menu_List").eq(num).hide(500);
+                    $(".menu_bg").stop().slideUp(500);
+                    $("aside").stop().hide(500);
+
+                }
+            });
+        });
+
+    </script>
+    <style>
+    .menu_bg{display:inline-block;}
+    </style>
+</head>
+
+<body>
+    <nav id="Main">
+            <ul class="main_menu">
+               <img src="images/menu/menu_bg1.png" alt="메뉴배경" class="menu_bg" width="100%">
+               <div class="menu_under"></div>
+                <li class="pick"><a href="menu1"><p class="hover_bg"></p>이용가이드</a>
+                <div class="Sub_Menu_List SML1">
+                    <ul class="sub_menu">
+                    <li>이용시간</li>
+                    <li>이용요금</li>
+                    <li>교통정보</li>
+                    <li>주변볼거리</li></ul>
+                </div></li>
+                <li><a href="menu1"><p class="hover_bg"></p>할인&amp;이벤트</a>
+                <div class="Sub_Menu_List SML2">
+                    <ul class="sub_menu">
+                    <li>이달의 혜택</li>
+                    <li>카드사 제휴</li>
+                    <li>제휴혜택</li>
+                    <li>이벤트</li></ul>
+                </div></li>
+                <li><a href="menu1"><p class="hover_bg"></p>어트랙션</a>
+                <div class="Sub_Menu_List SML3">
+                    <ul class="sub_menu">
+                    <li>어트랙션</li>
+                    <li>페스티벌</li>
+                    <li>공연정보</li>
+                    <li>다이닝/쇼핑</li></ul>
+                </div></li>
+                <li><a href="menu1"><p class="hover_bg"></p>맴버십</a>
+                <div class="Sub_Menu_List SML4">
+                    <ul class="sub_menu">
+                    <li>맴버십</li>
+                    <li>공지사항</li>
+                    <li>연간이용안내</li>
+                    <li>고객센터</li></ul>
+                </div></li>
+                <aside>
+                   <img src="images/menu/quick_app.png" alt="메뉴배경" class="menu_qucik">
+                   <h2><strong>앱 다운로드</strong>로<br>더 스마트하게!</h2>
+                   <div>
+                       <p><span>하나.</span>모바일 예매</p>
+                       <p><span>둘.</span>모바일 티켓발권</p>
+                       <p><span>셋.</span>프리패스 예약</p>
+                   </div>
+               </aside>
+                
+            </ul>
+            
+        </nav>
+</body>
+
+</html>

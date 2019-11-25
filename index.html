@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>SeoulLand_mobile_ㅎㅈㅎ</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<!--    <link rel="stylesheet" href="css/main.css">-->
+<!--    <link rel="stylesheet" href="css/m_main.css">-->
+    <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+    <!--    <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>-->
+    <script type="text/javascript" src="js/prefixfree.min.js"></script>
+    <script type="text/javascript" src="js/jquery-ui-1.10.3.custom.min.js"></script>
+    <script type="text/javascript" src="js/jquery.mousewheel.min.js"></script>
+    <script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
+    
+    <link rel="stylesheet" href="css/jquery.bxslider.css">
+	<link rel="stylesheet" href="css/style.css">
+	<script src="js/jquery.bxslider.js"></script>
+
+    <!--
+ 아이콘 사용시 활성
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">   
+    <script type="text/javascript" src="js/all.min.js"></script>
+아이콘적용-->
+
+    <style>
+        *{margin: 0; padding: 0; font:'맑은 고딕'; text-decoration: none; list-style: none;}
+        body{background: #535353; color:#525252; width: 95%; margin: 3% auto;}
+        m_wrap{background: #535353; position: relative; width: 100%; }
+        header{position: relative; width: 100%; margin: 0 auto; text-align: center;}
+        header h1{position: relative; padding-top: 5%; width: 100%; margin-bottom: 5%;}
+        .m_menuicon{position: absolute; left: 0; top: 15%; width: 20%;}
+        .m_srachicon{position: absolute; right: 0; top: 15%; width: 20%;}
+        
+        .header_bg{position: absolute; left: 0; top: 0; z-index: -1;}
+        
+        .m_ParkOpen{position: relative; width: 90%; margin: 0 auto; text-align: center; border-bottom: 2px solid #22b5b6; margin-bottom: 5%;}
+        .openTime{width: 80%; margin: 0 auto; text-align: center; color: #014254;}
+        .openTime_txt{text-indent: 7.5%; line-height: 250%; font-size: 3.7vw; background: url(images/mobile/OpenTime/clock.png) no-repeat; background-size: 7%; background-position: 2% 60%; letter-spacing: -0.5vw}
+        .openTime_num{font-size: 4vw; font-weight: bold; letter-spacing: 0.1vw}
+
+        .m_slide{position: relative; width: 100%; margin: 0 auto; text-align: center;}
+        .m_Dan_1_Finsh{width: 90%; margin: 0 auto; height: 2px; position: relative; background:  #22b5b6; margin-top: 4%; margin-bottom: 2%;}
+        
+        #m_Dan_2{position: relative; width: 100%; margin: 0 auto; text-align: center; background: url(images/mobile/body/mobile_bg2.png)0 0 no-repeat; background-size: cover; margin-top: 5%; padding-bottom: 3%;}
+        
+        
+        #m_Dan_2 h2{position: relative; width: 100%; color: #fff;font-size: 4vw; text-align: center; padding-top: 4%;}
+        #m_Dan_2 p{position: relative; width: 100%; color: #fff;font-size: 3vw; text-align: center;  margin-top: 1%; margin-bottom: 1.5%;}
+        
+        .m_Dan_2_img{width: 100%; margin: 0 auto; position: relative;}
+        .m_Dan_2_img li{float: left; width: 30.33%;}
+        .m_Dan_2_img li:nth-child(1){margin-left: 3.5%;}
+        .m_Dan_2_img li:nth-child(2){margin-left: 1%;}
+        .m_Dan_2_img li:nth-child(3){margin-left: 1%; margin-bottom: 0%;}
+        .m_Dan_2_img:after{content: ''; display: block; clear: both;}
+        
+        #m_Dan_3{position: relative; width: 100%; margin: 0 auto; text-align: center; background: url(images/mobile/body/mobile_bg3.png)3px 0 no-repeat; background-size: cover; padding-bottom: 4%;}
+        
+        #m_Dan_3 h2{position: relative; width: 100%; color: #1abcbd;font-size: 6vw; text-align: center; padding-top: 4%;}
+        #m_Dan_3 p{position: relative; width: 100%; color: #1abcbd;font-size: 3vw; text-align: center; }
+        
+    
+        
+        .m_Dan_3_img{width: 95%; margin: 0 auto; position: relative;}
+        .m_Dan_3_img li{float: left; width: 48%; padding: 1%; margin-bottom: 2.7%;}
+        .m_Dan_3_img:after{content: ''; display: block; clear: both;}
+        .more_box{position: relative; width: 150px; height: 30px; background: #014254; margin: 0 auto; border-radius: 30px;  }
+        .more_box span{color: #fff; font-weight: bold; letter-spacing: 1px; font-size: 1.5vw;}        
+        .more_box:hover{box-shadow: 5px 5px 10px #9d9d9d; transition: 0.3s;}
+        
+        #m_Dan_4{position: relative; width: 100%; margin: 0 auto; text-align: center; background: url(images/mobile/body/mobile_bg2.png)0 0 no-repeat; background-size: cover; margin-top: 1%; padding-bottom: 3%;}
+        .m_dan4_txt{padding-top: 2%;}
+        .m_dan4_txt span{color: #fff; font-weight: bold; font-size: 5vw;}
+        .m_dan4_txt p{color: #ffe246; font-size: 4vw; letter-spacing: 2px;}
+        #m_notcie_list{margin-top: 2%;}
+        #m_Dan_4 #m_notcie_list input[type="radio"]{
+            border: 1.5px solid #ffe246;
+            width: 15px; height: 15px;
+            border-radius: 50%;
+            
+            -webkit-appearance:none;
+        }
+         #m_Dan_4 #m_notcie_list input:checked[type='radio']{
+            background-color: #ffe246;
+            border: 2px solid #fff;
+            -webkit-appearance:none;
+        }
+        
+        #m_member{position: relative; width: 89%; }
+        #m_member div{float: left; width: 50%;}
+        #m_member::after{content: ''; display: block; clear: both;}
+        .m_member_txt{margin-top: 4%; font-size: 4vw; color: #ffe246; text-align: justify; font-weight: bold;}
+        .m_member_txt span{color: #024c5c; font-weight: bold;}
+        .m_member_txt strong{color: #fff; font-weight: bold;}
+        
+        #m_new{position: relative; width: 95%; margin: 0 auto; color: #fff; padding-bottom: 5.5%; display: none;  border-radius: 5px; padding-top: 2.5%; border: 2px solid #eee; margin-top: 1%;}
+        #m_new>p{font-weight: bold; font-size: 3vw; margin-bottom: 1%;}
+        #m_new button{font-size: 2.2vw; padding: 10%; background: #fff; border: none; border-radius: 5px; color: #1abcbd; font-weight: bold;}
+        #m_new div{float: left; width: 49.9%; margin-top: 2%; font-size: 2.8vw; margin-left: -2%; margin-right: -2%;  }
+        #m_new::after{content: ''; display: block; clear: both;}
+        .kakao{padding-left:8%;}
+        .kakao .kakao_txt strong{font-weight: bold; color: #f5ca00;}
+        .Facebook{text-align: center;}
+        .Facebook .Facebook_txt strong{font-weight: bold; color: #3b5a9a;}
+        .Facebook_btn{margin-top: 14%;}
+        .kakao_btn{margin-top: 4%;}
+        
+        #yearUse{display: none; }
+        .use_title1{color: #fff; background: #f5ca00; margin-bottom: 1.6%; font-size: 4vw;}
+        .use_list{width: 92%; margin: 0 auto;}
+        .use_list div{float: left; width: 45%; font-size: 2.01vw; text-align: left;  padding: 1%;  color: #fff}
+        .use_list::after{content: ''; display: block; clear: both;}
+        .use_guide li{margin-bottom: 0%;}
+        .use_guide span{font-weight: bold;}
+        .use_benefit li{margin-bottom: 2%;}
+        
+        
+
+        
+        
+        
+        .footer_bg{position:absolute;top: 0; left: 0; margin-top: 1%; margin-bottom: 3%;}
+        footer{position: relative; width: 100%; margin: 0 auto; text-align: center;}
+        footer div{float: left; width: 33.33%; position: relative; margin: 0 auto; }
+        footer::after{content: ''; display: block; clear: both;}
+        
+        .foot_sns ul li{float: left; position: relative; left: 15%; cursor: pointer; top: 20px;}
+        .foot_sns ul::after{content: ''; display: block; clear: both;}
+        
+        .foot_list {position: relative; right: 3%; margin-top: 3.5%; margin-right: 0%; font-size: 0.7vw; color: #eee;}
+        .foot_txt a img{margin: 10%;}
+        .foot_txt>p{color: #8e8e8e;  text-align: left; left: 0; font-size: 1vw;}
+        .foot_txt>address{color: #8e8e8e; font-weight: bold; text-align: left;; font-size: 1.5vw;}
+        
+        .TOP_btn{position: absolute; width: 10%; top: -50%; background: #fff; text-align: center;right: 0; font-size: 2.5vw; color: #9d9d9d;}
+        .TOP_btn:hover{font-weight: bold; color: #ffe246; background: #1abcbd; border: 1px solid #ffe246; transition: 0.5s; cursor: pointer; border-right: none;}
+        
+        .m_top_menu{display: none; position: absolute; background: #fff; z-index: 99999; top: 0%; left: 0; width: 80%; border: 2px solid #ffe246; border-bottom: 2px solid #9f9f9f; height: 78px;}
+        .m_top_menu h3{position: absolute; left: 0; width: 90%; text-align: left; padding: 30px; margin: 0 auto; z-index: 1;}
+        .m_top_menu .close{position: absolute; right: 0; top: 0; width: 50px; height: 50px; line-height: 50px; color: #1abcbd; font-size: 5vw; text-align: center; cursor: pointer; z-index: 9999999;}
+        .m_top_menu .m_top_menu_list{position: absolute; top: 80px; left: -0.3%; line-height: 60px; text-align: left; background: #fff; width: 99.0%;  border: 2px solid #ffe246; border-top: 4px solid #eee; text-indent: 20px;}
+        .m_top_menu .m_top_menu_list li:first-child{margin-top: 10%;}
+        .m_top_menu .m_top_menu_list li:last-child{margin-bottom: 39%;}
+        .m_top_menu .m_top_menu_list li{ width: 70%; font-weight: bold;}
+        .m_top_menu .menu_image{position: absolute; top: 580%;  width: 100%;}
+        .m_top_menu .menu_bt_1{position: absolute; top: 390px; right: 40%; border: 2px solid #014254; color: #40c7c8; padding: 10px; background: #fff; border-radius: 10px;}
+        .m_top_menu .menu_bt_2{position: absolute; top: 390px; right: 5%; border: 2px solid #014254; color: #40c7c8; padding: 10px; background: #fff; border-radius: 10px;}
+        
+        
+        
+        
+         @media screen and (min-width:500px) {
+            
+        .header_bg{height: auto;}
+        #m_Dan_2{margin-top: 6%;}
+        #m_Dan_3 {padding-bottom: 8%;}
+        #m_member{padding-bottom: 2%;}
+        #m_new div{width: 48%; font-size: 2.4vw;}
+        #m_new{padding-bottom: 10%; }
+        #m_new button{font-size: 1.8vw;}
+        .Facebook_btn{margin-top: 30%;}
+        #yearUse{padding-bottom: 3.1%;}
+        .use_title1{margin-bottom: 2%;}
+        .foot_txt>p{font-size: 2vw;}
+        .foot_txt>address{font-size: 2vw;}
+        .foot_sns{transform: scale(1.5); left: 4%; transition: 0.5s;}
+        .foot_txt img{transform: scale(1.4); transition: 0.5s;}
+             
+
+        
+        }
+        
+
+        
+
+        
+        
+    </style>        
+        
+        
+
+    <script>
+        $(function() {
+            $(".m_menuicon").click(function(e) {
+                e.preventDefault();
+                $(".m_top_menu").stop().show(500);
+            });
+             $(".m_top_menu .close").click(function(e) {
+                e.preventDefault();
+                $(".m_top_menu").stop().hide(500);
+            }); 
+            
+                      
+            
+            $('.slider1').bxSlider({
+				auto:true
+			});
+            $(".TOP_btn").click(function(e) {
+                e.preventDefault();
+                $("html, body").stop().animate({
+                    scrollTop: 0
+                }, 1000);
+            });         
+            $('input[name="m_dan4_list"]').change(function() {
+            var value = $(this).val();
+                console.log(value);// value
+            var checked = $(this).prop('checked');  // checked 상태 (true, false)
+                        // find a label element
+
+            
+            if(value =="member"){
+                $("#m_member").css({
+                    "display": "block"
+                });
+                $("#m_new").css({
+                    "display": "none"
+                });
+                $("#yearUse").css({
+                    "display": "none"
+                });
+            }
+            else if(value =="news"){
+                $("#m_new").css({
+                    "display": "block"
+                });
+                $("#m_member").css({
+                    "display": "none"
+                });                
+                $("#yearUse").css({
+                    "display": "none"
+                });
+            }
+            else if(value =="yearUse"){
+                $("#yearUse").css({
+                    "display": "block"
+                });
+                $("#m_member").css({
+                    
+                    "display": "none"
+                });
+                $("#m_new").css({
+                    "display": "none"
+                });
+            }
+                
+             });
+        });
+
+    </script>
+
+</head>
+
+<body>
+   
+    <div id="m_wrap">
+        <!-- 헤더구역    -->
+        <header>
+           
+        <h1><img src="images/mobile/header/m_logo.png" alt="모바일서울랜드" width="40%"></h1>
+                
+        <div id="m_Menu">
+           <a href="#menu" class="m_menuicon"><img src="images/mobile/header/m_menu.png" alt="모바일메뉴아이콘" width="30%"></a>            
+           <a href="#menu" class="m_srachicon"><img src="images/mobile/header/m_menu_srch.png" alt="모바일검색아이콘" width="35%"></a>            
+        </div>
+        <nav class="m_top_menu">
+            <h3><a href="foam.html" style="color: #525252">로그인 해주세요.</a></h3>
+            <span class="close">X</span>
+            <ul class="m_top_menu_list">
+                <li>이용가이드</li>
+                <li>할인&amp;이벤트</li>
+                <li><a href="sub_mobile.html" style="text-decoration: none;">어트랙션</a></li>
+                <li>맴버십</li>
+            </ul>
+            <button class="menu_bt_1">단체예약</button>
+            <button class="menu_bt_2">온라인예매</button>
+            <div class="menu_image"><img src="images/mobile/menu/menu_banner_image.png" alt="메뉴배너" width="100%"></div>
+        </nav>
+        <img src="images/mobile/body/mobile_bg.png" alt="모바일 1단 배경" width="100%" class="header_bg">
+        </header>
+        <!--파크 운영시간-->
+        <div id="m_Dan_1">
+            <div class="m_ParkOpen">
+                <ul class="openTime">
+                            <li class="openTime_txt"><span>오늘의 파크 운영시간</span>
+                            <span class="openTime_num"> 10:00 ~ 21:00</span></li>
+                </ul>
+            </div>
+            <!-- 메인슬라이드  -->
+            <div id="m_slide">
+			<div class="span_12">
+				<div class="slider1">
+					<div class="imgview"><img src="images/mobile/slide/m_slide1.png" alt="모바일슬라이드1" width="100%"></div>
+					<div class="imgview"><img src="images/mobile/slide/m_slide2.png" alt="모바일슬라이드2"  width="100%"></div>
+					<div class="imgview"><img src="images/mobile/slide/m_slide3.png" alt="모바일슬라이드3"  width="100%"></div>
+				</div>
+			</div>
+            </div>
+            <p class="m_Dan_1_Finsh"></p>
+        </div>
+            <!--2단 나에게 맞는 혜택-->
+            <div id="m_Dan_2">
+              <h2>나에게 꼭 맞는 혜택을 알아볼까요?</h2>
+              <p>현재 진행 중인 프로모션을 알아보세요.</p>
+              <ul class="m_Dan_2_img">
+                  <li><img src="images/event/bonus1.png" alt="" width="100%"></li>
+                  <li><img src="images/event/bonus2.png" alt="" width="100%"></li>
+                  <li><img src="images/event/bonus3.png" alt="" width="100%"></li>
+              </ul>
+            </div>
+            <!--3단 어트랙션-->
+            <div id="m_Dan_3">
+              <h2>Attracion</h2>
+              <p>서울랜드의 다양한 놀이기구를 체험하세요.</p>
+              <ul class="m_Dan_3_img">
+                  <li><img src="images/mobile/3dan/3dan_image1.png" alt="" width="95%"></li>
+                  <li><img src="images/mobile/3dan/3dan_image2.png" alt="" width="95%"></li>
+              </ul>
+              <div class="more_box">
+                    <span><a href="sub_mobile.html" style="color: #fff">더 많은 어트랙션 보기</a></span>
+                </div>
+
+
+            </div>
+            <div id="m_Dan_4">
+                <div class="m_dan4_txt">
+                    <span>서울랜드를 좀 더</span>
+                    <p>특별하게 즐기고 싶다면!</p>
+                </div>
+                <div id="m_notcie_list">
+                   <form action="#">
+                       <legend class="m_list">
+                           <input type="radio" value="member" checked class="member" name="m_dan4_list">
+                           <input type="radio" value="news" class="news" name="m_dan4_list">
+                           <input type="radio" value="yearUse" class="yearuse" name="m_dan4_list">
+                       </legend>
+                   </form>
+                </div>
+                <div id="m_member">
+                   <div class="m_member_image"><img src="images/mobile/4dan/m_member_image.png" alt="모바일 맴버쉽" width="50%"></div>
+                   <div class="m_member_txt">
+                       <p>서울랜드를 1년간<br> <span>자유롭게 이용 가능한</span></p>
+                        <p><strong>서울랜드 연간이용권에<br> 지금 가입하세요!</strong></p><br>
+                        </div>                    
+                </div>
+                <div id="m_new">
+                   <p>서울랜드 소식을 가장 빠르게 받으실 수 있습니다.</p>
+                    <div class="kakao">
+                        <div class="kakao_image"><img src="images/4dan/kakao.png" alt="kakaostory" width="70%"></div>
+                        <div class="kakao_txt">
+                            <p><span>서울랜드</span> <strong>KakaoStroy</strong></p>
+                            
+                            <button class="kakao_btn">카카오스토리</button>
+                        </div>
+                    </div>
+                    <div class="Facebook">
+                        <div class="Facebook_image"><img src="images/4dan/facebook.png" alt="facebook" width="70%"></div>
+                        <div class="Facebook_txt">
+                            <div class="Facebook_txt">
+                                <p><span>서울랜드</span> <strong>Facebook</strong></p>
+                                <button class="Facebook_btn">페이스북</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="yearUse">
+                   <h3 class="use_title1">서비스 이용안내</h3>
+                    <ul class="use_list">
+                        <div>
+                            <ul class="use_guide">
+                                <li><span>연간이용권</span> 소지시에만 혜택이 제공</li>
+                                <li><span>연간이용권증</span>은 본인에 한해서 사용 가능</li>
+                                <li><span>연간이용권 부정사용</span>법적 처벌의 대상</li>
+                                <li><span>분실하신 경우</span>본인 확인 후 재발급이 가능</li>
+                                <li><span>상품의 변경</span> 방문하신 경우에 가능합니다.</li>
+                            </ul>
+                        </div>
+                        <div>
+
+                            <ul class="use_benefit">
+                                <li><span>서울랜드 이용</span></li>
+                                <li><span>코끼리열차 무료탑승</span></li>
+                                <li><span>유료 어트랙션 할인</span></li>
+                                <li><span>레스토랑 10% 선물샵 5% 할인</span></li>
+                                <li><span>국립 현대 미술관 과천 ,카페테리아 할인</span></li>
+                                <li><span>피자키친 전 지점 20% 할인</span></li>
+                                <li><span>대관령 하늘목장 입장권 50% 할인</span></li>
+                            </ul>
+                        </div>
+
+                    </ul>
+
+                </div>
+            </div>
+             
+        <footer>
+           <img src="images/mobile/body/mobile_footer_bg4.png" alt="모바일 배경" width="100%" class="footer_bg">
+           <div class="TOP_btn">TOP</div>
+            <div class="foot_sns">
+                <ul>
+                    <li class="sns_facebook"><img src="images/mobile/footer/btn_sns_go01.png" alt="페이스북" width="100%"></li>
+                    <li class="sns_instargram"><img src="images/mobile/footer/btn_sns_go02.png"  alt="인스타그램" width="100%"></li>
+                    <li class="sns_twiter"><img src="images/mobile/footer/btn_sns_go03.png"  alt="트위터"  width="100%"></li>
+                    <li class="sns_Tstory"><img src="images/mobile/footer/btn_sns_go04.png"  alt="티스토리"  width="100%"></li>
+                    <li class="sns_youtube"><img src="images/mobile/footer/btn_sns_go05.png"  alt="유튜브"  width="100%"></li>
+                </ul>
+            </div>
+            <div class="foot_txt">
+                <a href="index_mobile.html"><img src="images/mobile/footer/logo_footer.png" alt="footer 로고" width="50%"></a>
+                <p>(주)서울랜드 | 대표이사 : 홍정화 |
+                    사업자등록번호 : 123-56-7890 </p>
+                <p>안내전화  010-4190-3280 | 운영자 이메일 : hgh0328@naver.com</p>
+                <address>Copyright(c)Seoullandall rights reserved</address>
+            </div>
+            <div class="foot_list">
+                <select name="FAMILY" id="familySite1">
+                    <option value="Fdefult" selected>리조트 내외부</option>
+                    <option value="F1">놀이동산</option>
+                    <option value="F2">서울호텔</option>
+                    <option value="F3">서울관광</option>
+                </select>
+                <select name="리조트" id="Re">
+                    <option value="Rdefult" selected>패밀리 사이트</option>
+                    <option value="R1">서울랜드</option>
+                    <option value="R2">에버랜드</option>
+                    <option value="R3">롯데월드</option>
+                </select>
+            </div>
+            
+        </footer>
+
+
+    </div>
+
+
+
+
+</body>
+
+</html>

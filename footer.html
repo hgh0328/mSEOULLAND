@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>footer</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/main.css">
+    <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+<!--        <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>-->
+    <script type="text/javascript" src="js/prefixfree.min.js"></script>
+    <script type="text/javascript" src="js/jquery-ui-1.10.3.custom.min.js"></script>
+    <script type="text/javascript" src="js/jquery.mousewheel.min.js"></script>
+    <script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
+
+    <script>
+        $(function() {
+
+            $(".member").click(function(e) {
+                e.preventDefault();
+                $(".member").addClass("on");
+                $(".news").removeClass("on");
+                $(".yearuse").removeClass("on");
+                $("#member").css({
+                    "display": "block"
+                });
+                $("#News").css({
+                    "display": "none"
+                });
+                $("#yearUse").css({
+                    "display": "none"
+                });
+            });
+
+            $(".news").click(function(e) {
+                e.preventDefault();
+                $(".member").removeClass("on");
+                $(".news").addClass("on");
+                $(".yearuse").removeClass("on");
+                $("#member").css({
+                    "display": "none"
+                });
+                $("#News").css({
+                    "display": "block"
+                });
+                $("#yearUse").css({
+                    "display": "none"
+                });
+            });
+
+            $(".yearuse").click(function(e) {
+                e.preventDefault();
+                $(".member").removeClass("on");
+                $(".news").removeClass("on");
+                $(".yearuse").addClass("on");
+                $("#member").css({
+                    "display": "none"
+                });
+                $("#News").css({
+                    "display": "none"
+                });
+                $("#yearUse").css({
+                    "display": "block"
+                });
+            });
+
+            $(".top_btn").click(function(e) {
+                e.preventDefault();
+                $("html, body").stop().animate({
+                    scrollTop: 0
+                }, 1000);
+            });
+
+            var menu = $("#top_menu > ul > li");
+            var contents = $("#content > div");
+
+            menu.click(function(event) {
+                event.preventDefault(); /*기존의 성질을 삭제*/
+
+                var tg = $(this);
+                var i = tg.index();
+
+                var section = contents.eq(i);
+                var tt = section.offset().top;
+
+
+
+                $('html, body').stop().animate({
+                    scrollTop: tt + 1
+                }, 1000);
+            });
+
+            $(document).scroll(function() {
+                var sct = $(document).scrollTop();
+
+                contents.each(function() {
+                    var tg = $(this);
+                    var i = tg.index();
+
+                    if (tg.offset().top <= sct) {
+                        menu.removeClass('onview');
+                        menu.eq(i).addClass('onview');
+
+                        if (i > 0) {
+                            $("#top_menu > ul").removeClass("menu_hide");
+                            $("#top_menu > ul").addClass("menu_show");
+                        }
+                        if (i <= 0) {
+                            $("#top_menu > ul").addClass("menu_hide");
+                            $("#top_menu > ul").removeClass("menu_show");
+                        }
+                    }
+
+                });
+            });
+
+            $(".sub3_image > li ").mouseenter(function() {
+                var tg = $(this);
+                var i = tg.index();
+                var num = i + 1;
+                $(".sub3_image > li > a > img").eq(i).attr({
+                    src: "images/3dan/3dan_" + "hover_" + "img" + num + ".png"
+                });
+                $(".pi_" + num).css({
+                    "opacity": "1",
+                    "transition": "0.4s"
+                });
+            });
+            $(".sub3_image > li ").mouseleave(function() {
+                var tg = $(this);
+                var i = tg.index();
+                var num = i + 1;
+                $(".sub3_image > li > a > img").eq(i).attr({
+                    src: "images/3dan/3dan_" + "img" + num + ".png"
+                });
+                $(".pi_" + num).css({
+                    "opacity": "0.7",
+                    "transition": "0.4s"
+                });
+
+            });
+
+
+            $(".Sub_Menu_List").hide();
+            $(".hover_bg").hide();
+            $("aside").hide();
+
+            $(".main_menu > li").on({
+                mouseenter: function() {
+                    var i = $(this).index();
+                    var num = i - 2;
+                    console.log(num);
+                    $(".main_menu > li > a >.hover_bg").eq(num).show();
+                    $(".main_menu > li > .Sub_Menu_List").eq(num).show(100);
+                    $(".menu_bg").stop().slideDown(100);
+                    $("aside").stop().show(100);
+                },
+                mouseleave: function() {
+                    var i = $(this).index();
+                    var num = i - 2;
+                    $(".main_menu > li > a >.hover_bg").eq(num).hide();
+                    $(".main_menu > li > .Sub_Menu_List").eq(num).hide(500);
+                    $(".menu_bg").stop().slideUp(500);
+                    $("aside").stop().hide(500);
+
+                }
+            });
+        });
+
+    </script>
+</head>
+
+<body>
+    <footer>
+            <div class="foot_sns">
+                <ul>
+                    <li class="sns_facebook"><img src="../images/footer/footer_facebook.png" alt="페이스북"></li>
+                    <li class="sns_instargram"><img src="../images/footer/footer_instargram.png" alt="인스타그램"></li>
+                    <li class="sns_twiter"><img src="../images/footer/footer_twiter.png" alt="트위터"></li>
+                    <li class="sns_Tstory"><img src="../images/footer/footer_Tstory.png" alt="티스토리"></li>
+                    <li class="sns_youtube"><img src="../images/footer/footer_youtube.png" alt="유튜브"></li>
+                </ul>
+            </div>
+            <div class="foot_txt">
+                <a href="index.html"><img src="../images/footer/footer_logo.png" alt=""></a>
+                <p>주소 : 13829 경기도 과천시 광명로 181(주)서울랜드 | 대표이사 : 홍정화 |
+                    사업자등록번호 : 123-56-7890 | 통신판매업신고번화 : 서울 제 1호</p>
+                <p>안내전화 “ 010-4190-3280 | 개인정보관리 책임자 : IIBI팀 홍정화 | 운영자 이메일 : hgh0328@naver.com</p>
+                <address>Copyright(c)Seoullandall rights reserved</address>
+            </div>
+            <div class="foot_list">
+                <select name="FAMILY" id="familySite1">
+                    <option value="Fdefult" selected>리조트 내 시설</option>
+                    <option value="F1">놀이동산</option>
+                    <option value="F2">서울호텔</option>
+                    <option value="F3">서울관광</option>
+                </select>
+                <select name="리조트" id="Re">
+                    <option value="Rdefult" selected>패밀리 사이트</option>
+                    <option value="R1">서울랜드</option>
+                    <option value="R2">에버랜드</option>
+                    <option value="R3">롯데월드</option>
+                </select>
+            </div>
+            <div class="top">
+                <p class="top_btn">TOP</p>
+                <p class="top_bar"> | </p>
+            </div>
+        </footer>
+</body>
+
+</html>

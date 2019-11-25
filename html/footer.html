@@ -1,0 +1,52 @@
+
+    <script>
+        $(function() {
+            $(".top_btn").click(function(e) {
+                e.preventDefault();
+                $("html, body").stop().animate({
+                    scrollTop: 0
+                }, 1000);
+            });
+
+           
+        });
+
+    </script>
+
+    <footer>
+            <div class="foot_sns">
+                <ul>
+                    <li class="sns_facebook"><img src="../images/footer/footer_facebook.png" alt="페이스북"></li>
+                    <li class="sns_instargram"><img src="../images/footer/footer_instargram.png" alt="인스타그램"></li>
+                    <li class="sns_twiter"><img src="../images/footer/footer_twiter.png" alt="트위터"></li>
+                    <li class="sns_Tstory"><img src="../images/footer/footer_Tstory.png" alt="티스토리"></li>
+                    <li class="sns_youtube"><img src="../images/footer/footer_youtube.png" alt="유튜브"></li>
+                </ul>
+            </div>
+            <div class="foot_txt">
+                <a href="#"><img src="../images/footer/footer_logo.png" alt=""></a>
+                <p>주소 : 13829 경기도 과천시 광명로 181(주)서울랜드 | 대표이사 : 홍정화 |
+                    사업자등록번호 : 123-56-7890 | 통신판매업신고번화 : 서울 제 1호</p>
+                <p>안내전화 “ 010-4190-3280 | 개인정보관리 책임자 : IIBI팀 홍정화 | 운영자 이메일 : hgh0328@naver.com</p>
+                <address>Copyright(c)Seoullandall rights reserved</address>
+            </div>
+            <div class="foot_list">
+                <select name="FAMILY" id="familySite1">
+                    <option value="Fdefult" selected>리조트 내 시설</option>
+                    <option value="F1">놀이동산</option>
+                    <option value="F2">서울호텔</option>
+                    <option value="F3">서울관광</option>
+                </select>
+                <select name="리조트" id="Re">
+                    <option value="Rdefult" selected>패밀리 사이트</option>
+                    <option value="R1">서울랜드</option>
+                    <option value="R2">에버랜드</option>
+                    <option value="R3">롯데월드</option>
+                </select>
+            </div>
+            <div class="top">
+                <p class="top_btn">TOP</p>
+                <p class="top_bar"> | </p>
+            </div>
+        </footer>
+

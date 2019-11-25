@@ -1,0 +1,95 @@
+@charset "utf-8";
+/*.container{width:1000px;margin:0 auto;}
+.row{margin-bottom:20px;}
+.row:after{content:"";display: block;clear: both;}
+.row div[class*="span"]{float:left;text-align:justify;
+	margin-left:2%;
+}
+.row div[class*="span"]:first-child{margin-left:0;}
+.span_6{width:49%;}
+.span_4{width:32%;}
+.span_3{width:23.5%;}*/
+
+
+@media screen and (min-width:769px){
+	.container{width:1000px;margin:0 auto;}
+	.row{margin-bottom:20px;}
+	.row:after{content:"";display: block;clear: both;}
+	.row div[class*="span"]{float:left;text-align:justify;
+		margin-left:2%;/*padding:10px;border:1px solid #000;*/
+	}
+	.row div[class*="span"]:first-child{margin-left:0;}
+	.span_6{width:49%;}
+	.span_4{width:32%;}
+	.span_3{width:23.5%;}
+
+	.slider1 div.imgview img{height:500px;}
+}/*769px~*/
+
+
+@media screen and (min-width:576px) and (max-width:768px){
+	.container{width:95%;}
+	.row{margin-bottom:20px;}
+	.row:after{content:"";display: block;clear: both;}
+	.row div[class*="span"]{float:left;text-align:justify;
+		margin-left:2%;margin-bottom:10px;
+	}
+	.row div[class*="span"]:first-child,
+	.row div[class*="span"]:nth-child(3){margin-left:0;}
+
+	.span_6,.span_4,.span_3{width:49%;}
+
+	.md_vnone{display:none;}
+	#button{display:none;}
+}
+
+@media screen and (max-width:575px){
+	.row{padding:10px;}
+	.row div{margin-bottom:10px;}
+	
+	.mo_vnone{display:none;}
+	#button{display:none;}
+}/*~575px*/
+
+
+
+
+
+/*card*/
+.card{border:1px solid #ddd;border-radius:10px;}
+.card-img-top{
+	border-top-right-radius:10px;
+	border-top-left-radius:10px;
+}
+.card-body{padding:20px;}
+.card-body .card-title{
+	font-size:18px;margin-bottom:10px;
+}
+.card-body .card-text{
+	font-size:14px;margin-bottom:10px;
+}
+
+/*button*/
+.btn{
+	padding:5px 10px;border-radius:5px;
+	text-align:center;transition:0.3s;
+}
+.btn a{color:#fff;display: block;line-height:30px;}
+
+.btn.blue:hover{background-color:blue;}
+.btn.pink:hover{background-color:orange;}
+
+/*버튼색상*/
+.btn.blue{background-color:#007bff;}
+.btn.pink{background-color:red;}
+
+/*row색상*/
+.row.bg-skyblue{background:skyblue;}
+.row.bg-gray{background:gray;}
+
+.bx-wrapper{box-shadow:none;border:none;
+	margin-bottom:0;}
+.bx-wrapper .bx-pager{bottom:10px;}
+#slider2wrap .bx-pager{background:red;width:150px;top:0;right:0;height:50px;}
+
+

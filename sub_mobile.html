@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>SeoulLand_mobile_ㅎㅈㅎ</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<!--    <link rel="stylesheet" href="css/main.css">-->
+<!--    <link rel="stylesheet" href="css/m_main.css">-->
+    <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+    <!--    <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>-->
+    <script type="text/javascript" src="js/prefixfree.min.js"></script>
+    <script type="text/javascript" src="js/jquery-ui-1.10.3.custom.min.js"></script>
+    <script type="text/javascript" src="js/jquery.mousewheel.min.js"></script>
+    <script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
+    
+    <link rel="stylesheet" href="css/jquery.bxslider.css">
+	<link rel="stylesheet" href="css/style.css">
+	<script src="js/jquery.bxslider.js"></script>
+
+    <!--
+ 아이콘 사용시 활성
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">   
+    <script type="text/javascript" src="js/all.min.js"></script>
+아이콘적용-->
+
+    <style>
+        *{margin: 0; padding: 0; font:'맑은 고딕'; text-decoration: none; list-style: none;}
+        body{background: #535353; color:#525252; width: 95%; margin: 3% auto;}
+        m_wrap{background: #535353; position: relative; width: 100%; }
+        header{position: relative; width: 100%; margin: 0 auto; text-align: center;}
+        header h1{position: relative; padding-top: 5.1%; width: 100%; margin-bottom: 7%;}
+        .m_menuicon{position: absolute; left: 0; top: 15%; width: 20%;}
+        .m_srachicon{position: absolute; right: 0; top: 15%; width: 20%;}
+        
+        .header_bg{position: absolute; left: 0; top: 0; z-index: -1; _height: 500px;}
+
+        .footer_bg{position:absolute;top: 0; left: 0; margin-top: 1%; margin-bottom: 3%;}
+        footer{position: relative; width: 100%; margin: 0 auto; text-align: center;}
+        footer div{float: left; width: 33.33%; position: relative; margin: 0 auto; }
+        footer::after{content: ''; display: block; clear: both;}
+        
+        .foot_sns ul li{float: left; position: relative; left: 15%; cursor: pointer; top: 20px;}
+        .foot_sns ul::after{content: ''; display: block; clear: both;}
+        
+        .foot_list {position: relative; right: 3%; margin-top: 3.5%; margin-right: 0%; font-size: 0.7vw; color: #eee;}
+        .foot_txt a img{margin: 10%;}
+        .foot_txt>p{color: #8e8e8e;  text-align: left; left: 0; font-size: 1vw;}
+        .foot_txt>address{color: #8e8e8e; font-weight: bold; text-align: left;; font-size: 1.5vw;}
+        
+        .TOP_btn{position: absolute; width: 10%; top: -50%; background: #fff; text-align: center;right: 0; font-size: 2.5vw; color: #9d9d9d;}
+        .TOP_btn:hover{font-weight: bold; color: #ffe246; background: #1abcbd; border: 1px solid #ffe246; transition: 0.5s; cursor: pointer; border-right: none;}
+        
+        .m_top_menu{display: none; position: absolute; background: #fff; z-index: 99999; top: 0%; left: 0; width: 80%; border: 2px solid #ffe246; border-bottom: 2px solid #9f9f9f; height: 78px;}
+        .m_top_menu h3{position: absolute; left: 0; width: 90%; text-align: left; padding: 30px; margin: 0 auto; z-index: 1;}
+        .m_top_menu .close{position: absolute; right: 0; top: 0; width: 50px; height: 50px; line-height: 50px; color: #1abcbd; font-size: 5vw; text-align: center; cursor: pointer; z-index: 9999999;}
+        .m_top_menu .m_top_menu_list{position: absolute; top: 80px; left: -0.3%; line-height: 60px; text-align: left; background: #fff; width: 99.0%;  border: 2px solid #ffe246; border-top: 4px solid #eee; text-indent: 20px;}
+        .m_top_menu .m_top_menu_list li:first-child{margin-top: 10%;}
+        .m_top_menu .m_top_menu_list li:last-child{margin-bottom: 39%;}
+        .m_top_menu .m_top_menu_list li{ width: 70%; font-weight: bold;}
+        .m_top_menu .menu_image{position: absolute; top: 580%;  width: 100%;}
+        .m_top_menu .menu_bt_1{position: absolute; top: 390px; right: 40%; border: 2px solid #014254; color: #40c7c8; padding: 10px; background: #fff; border-radius: 10px;}
+        .m_top_menu .menu_bt_2{position: absolute; top: 390px; right: 5%; border: 2px solid #014254; color: #40c7c8; padding: 10px; background: #fff; border-radius: 10px;}
+        
+        
+        
+        
+         @media screen and (min-width:500px) {
+            
+        .header_bg{height: auto;}
+        #m_Dan_2{margin-top: 6%;}
+        #m_Dan_3 {padding-bottom: 8%;}
+        #m_member{padding-bottom: 2%;}
+        #m_new div{width: 48%; font-size: 2.4vw;}
+        #m_new{padding-bottom: 10%; }
+        #m_new button{font-size: 1.8vw;}
+        .Facebook_btn{margin-top: 30%;}
+        #yearUse{padding-bottom: 3.1%;}
+        .use_title1{margin-bottom: 2%;}
+        .foot_txt>p{font-size: 2vw;}
+        .foot_txt>address{font-size: 2vw;}
+        .foot_sns{transform: scale(1.5); left: 4%; transition: 0.5s;}
+        .foot_txt img{transform: scale(1.4); transition: 0.5s;}
+             
+
+        
+        }
+        
+
+        
+
+        
+        
+    </style>        
+        
+        
+
+    <script>
+        $(function() {
+            $(".m_menuicon").click(function(e) {
+                e.preventDefault();
+                $(".m_top_menu").stop().show(500);
+            });
+             $(".m_top_menu .close").click(function(e) {
+                e.preventDefault();
+                $(".m_top_menu").stop().hide(500);
+            }); 
+
+            
+
+            
+
+        });
+
+    </script>
+    
+    <style>
+        .Attraction_dan1{position: relative; width: 100%; margin: 0 auto; text-align: center;}
+        .Attraction_nav{text-align: left;}
+        .Attraction_nav li{float: left; padding: 2%; font-size: 1vw; margin-bottom: 4%;}
+        .Attraction_nav::after{content: ''; display: block; clear: both;}
+        .btn_Box{text-align: right; position: absolute; top: 0; z-index: 1; right: 0;}
+        .btn_Box img{width: 25%; padding: 1%;}
+        .Attraction_search>h2{position: absolute; color: #fff; top: 23.5%; letter-spacing: 5px; left: 10%;}
+        .Attraction_search>p{position: absolute; color: #fff; top: 28%;  left: 10%; font-size: 8px;}
+        .search_box{background: #014254; width: 100%; color: #fff; height: 200px; position: relative; bottom: 15px;}
+        .subBox{position: relative; top: -15px; background: #014254; width: 100%; text-align: center;  height: 40px;   color: #fff; z-index: 1}
+        .subBox>strong{line-height: 40px; font-weight: bold;}
+        .subBox img{margin-left: 5px; width: 4%; position: relative; top: 2px;}
+        .subBox>p{line-height: 40px; font-weight: bold; color: #ddc949}
+        .search_list{position: relative; top: 10px; color: #000; text-align: center; padding-top: 10px; font-weight: bold;}
+        .search_list li{float: left; width: 50%; color: #fff; font-size: 2.7vw;}
+        .search_list::after{content: ''; display: block; clear: both;}
+        .search_box button{position: absolute; bottom: 30px; left: 35%; width: 30%; background: none; border: 1px solid #fff; color: #fff; border-radius: 30px; height: 30px; line-height: 30px;}
+        .search_box button:active{ background: #fff; color: #1abcbd; transition: 0.1s;}
+        .l1 select{width: 80%; border-radius: 30px; text-indent: 60px; height: 20px; margin-top: 10px; color: #013949;}
+        .l2 select{width: 80%; border-radius: 30px; text-indent: 60px; height: 20px; margin-top: 10px; color: #013949}
+        .l3{margin-top: 10px;}
+        .l3 input{width: 80%; border-radius: 30px; text-align: center; height: 20px; color: #013949;}
+        .l3 span{position: absolute; top: 83px; left: 38%; color: #013949; font-size: 3vw;}
+        .l4{margin-top: 10px;}
+        .l4 div{width: 80%; background: #fff; height: 20px; border-radius: 30px; position: relative; left: 19px; color: #013949; text-align: left; text-indent: 10px; line-height: 20px; margin-top: 5px;}
+        .l4 input{-webkit-appearance:none; background: #fff; border: 2px solid #1abcbd; width: 15px; height: 15px; border-radius: 50%; position: absolute; right: 7%; top: 86px;}
+        .l4 input:checked{background: #1abcbd; border-color: #eee;}
+        
+        
+        .m_Dan_3_img img{width: 98%; margin: 0 auto; position: relative; border-radius: 20px; margin-left: 1.5%; text-align: center;}
+        .m_Dan_3_img p{font-weight: bold;}
+        .m_Dan_3_img span{}
+        .m_Dan_3_img li{float: left; width: 46.5%; margin: 1%; margin-bottom: 10px; margin-top: 30px; border: 2px solid #8cddde; border-radius: 10px; padding-bottom: 22px;}
+        .m_Dan_3_img:after{content: ''; display: block; clear: both;}
+        .m_Dan_3_img .on{background: #013949; color: #ddc949; border-color: #013949; box-shadow: 0px 3px 20px #013949;}
+        .even{position: relative; width: 100%; margin: 0 auto; text-align: center; background: url(images/mobile/body/mobile_bg3.png)3px 0 no-repeat; background-size: cover; padding-bottom: 4%; text-align: left; font-size: 4vw;}
+        .odd{position: relative; width: 100%; margin: 0 auto; text-align: center; background: url(images/mobile/body/mobile_bg2.png)0px 0 no-repeat; background-size: cover;  text-align: left; font-size: 4vw; color: #fff; border-color: #fff;}
+        
+        .search_box{display: none;}
+        .subBox>p{display: none;}
+        .blank_box{height: 50px; display: block;}
+        
+    </style>
+    <script>
+        $(function() {
+            $(".subBox>strong").click(function(){
+                $(".subBox>p").css({"display":"block"});
+                $(".subBox>strong").css({"display":"none"});
+                $(".blank_box").css({"display":"none"});
+                $(".subBox").css({"box-shadow":"0px 10px 15px #012d39"});
+                $(".search_box").slideDown();
+            });
+             $(".subBox>p").click(function(){
+                $(".subBox>p").css({"display":"none"});
+                $(".subBox>strong").css({"display":"block"});
+                $(".blank_box").css({"display":"block"});
+                $(".subBox").css({"box-shadow":"0px 0px 0px #fff"});
+                $(".search_box").hide();
+            });
+            
+        });
+
+    </script>
+
+</head>
+
+<body>
+   
+    <div id="m_wrap">
+        <!-- 헤더구역    -->
+        <header>
+           
+        <h1><a href="index.html"><img src="images/mobile/header/m_logo.png" alt="모바일서울랜드" width="40%"></a></h1>
+                
+        <div id="m_Menu">
+           <a href="#menu" class="m_menuicon"><img src="images/mobile/header/m_menu.png" alt="모바일메뉴아이콘" width="30%"></a>            
+           <a href="#menu" class="m_srachicon"><img src="images/mobile/header/m_menu_srch.png" alt="모바일검색아이콘" width="35%"></a>            
+        </div>
+        <nav class="m_top_menu">
+            <h3>로그인 해주세요.</h3>
+            <span class="close">X</span>
+            <ul class="m_top_menu_list">
+                <li>이용가이드</li>
+                <li>할인&amp;이벤트</li>
+                <li><a href="sub_mobile.html">어트랙션</a></li>
+                <li>맴버십</li>
+            </ul>
+            <button class="menu_bt_1">단체예약</button>
+            <button class="menu_bt_2">온라인예매</button>
+            <div class="menu_image"><img src="images/mobile/menu/menu_banner_image.png" alt="메뉴배너" width="100%"></div>
+        </nav>
+        <img src="images/mobile/sub/header_m__sub_bg.png" alt="모바일 1단 배경" width="100%" class="header_bg">
+        </header>
+        
+        
+        
+        
+        <!--이용nav-->
+        <div class="Attraction_dan1">
+             <ul class="Attraction_nav">
+                <li><img src="images/sub/sub_1/home_btn.png" alt="홈버튼"></li>
+                <li>|</li>
+                <li>이용가이드</li>
+                <li>|</li>
+                <li>파크이용안내</li>
+            </ul>
+            <div class="btn_Box">
+                <img src="images/sub/sub_1/share_btn.png" alt="공유버튼" style="cursor: pointer">
+                <img src="images/sub/sub_1/print_btn.png" alt="프린트버튼" style="cursor: pointer">
+            </div>
+        </div>
+        <div class="Attraction_search">
+            <img src="images/mobile/sub/attraction_bg1.png" alt="어트랙션 배경" width="100%">
+            <h2>ATTRACTION</h2>
+            <P>언제나 새롭고 즐거운 경험을 주는 어트랙션을 소개합니다.</P>
+            
+            <div class="subBox">
+                   <strong>조건검색<img src="images/mobile/sub/search_btn.png" alt="r\검색버튼"></strong>
+                    <p>나에게 맞는 어트랙션을 찾아보세요!</p>
+                    
+            </div>
+            <div class="blank_box"></div>
+            <div class="search_box">               
+                <span style="display: none;">X</span>
+                <form action="#">
+                    <legend></legend>
+                    <ul class="search_list">
+                        <li class="l1"><p>위치</p><select>
+                        <option value="area" name="area">전체</option>
+                        <option value="area" name="area">세계의 광장</option>
+                        <option value="area" name="area">모험의 나라</option>
+                        <option value="area" name="area">캐릭터 타운</option>                        
+                        <option value="area" name="area">미래의 나라</option>                        
+                        <option value="area" name="area">삼천리 동산</option>                        
+                        </select></li>
+                        <li class="l2"><p>나이</p><select>
+                        <option value="age" name="age">나이</option>
+                        <option value="age" name="age">~9세</option>
+                        <option value="age" name="age">10세~12세</option>
+                        <option value="age" name="age">13세~</option>                        
+                        </select></li>
+                        <li class="l3"><p>키</p>
+                        <input type="text" placeholder="입력"><span>CM</span></li>
+                        <li class="l4"><p>보호자</p>
+                        <div>보호자 탑승</div> <input type="checkbox" value="보호자 탑승"></li>
+                    </ul>
+                    <button>조회하기</button>
+                    <input type="image" src="" alt="">
+                </form>
+            </div>
+        </div>
+        
+        <!--이미지단-->
+        <div id="m_Dan_3" class="odd">
+              <ul class="m_Dan_3_img">
+                  <li class="on">
+                  <img src="images/mobile/sub/160422_meca_1.png" alt="" width="95%">
+                  <p>터닝메카드 레이싱</p>
+                  <span>[100cm 이상]</span>
+                  </li>
+                  <li>
+                  <img src="images/mobile/sub/160422_car_1.png" alt="" width="95%">
+                  <p>터닝메카드 고!범퍼카</p>
+                  <span>[100cm~130cm]</span>
+                  </li>
+            </ul>
+            </div>
+            
+            <div id="m_Dan_3" class="even">
+              <ul class="m_Dan_3_img">
+                  <li >
+                  <img src="images/mobile/sub/17black0.png" alt="" width="95%">
+                  <p>블랙홀 2000</p>
+                  <span>[120cm 이상]</span>
+                  </li>
+                  <li>
+                  <img src="images/mobile/sub/g006(1).png" alt="" width="95%">
+                  <p>니나노 고카트</p>
+                  <span>[100cm이상]</span>
+                  </li>
+            </ul>
+            </div>
+            
+            <div id="m_Dan_3" class="odd">
+              <ul class="m_Dan_3_img">
+                  <li >
+                  <img src="images/mobile/sub/visual_1_888.png" alt="" width="95%">
+                  <p>은하열차 888</p>
+                  <span>[120cm 이상]</span>
+                  </li>
+                  <li>
+                  <img src="images/mobile/sub/visual_1(37).png" alt="" width="95%">
+                  <p>개구리만세</p>
+                  <span>[90cm~130cm]</span>
+                  </li>
+            </ul>
+            </div>
+        
+        
+        
+        
+        
+       
+             
+        <footer>
+           <img src="images/mobile/body/mobile_footer_bg4.png" alt="모바일 배경" width="100%" class="footer_bg">
+           
+            <div class="foot_sns">
+                <ul>
+                    <li class="sns_facebook"><img src="images/mobile/footer/btn_sns_go01.png" alt="페이스북" width="100%"></li>
+                    <li class="sns_instargram"><img src="images/mobile/footer/btn_sns_go02.png"  alt="인스타그램" width="100%"></li>
+                    <li class="sns_twiter"><img src="images/mobile/footer/btn_sns_go03.png"  alt="트위터"  width="100%"></li>
+                    <li class="sns_Tstory"><img src="images/mobile/footer/btn_sns_go04.png"  alt="티스토리"  width="100%"></li>
+                    <li class="sns_youtube"><img src="images/mobile/footer/btn_sns_go05.png"  alt="유튜브"  width="100%"></li>
+                </ul>
+            </div>
+            <div class="foot_txt">
+                <a href="index.html"><img src="images/mobile/footer/logo_footer.png" alt="footer 로고" width="50%"></a>
+                <p>(주)서울랜드 | 대표이사 : 홍정화 |
+                    사업자등록번호 : 123-56-7890 </p>
+                <p>안내전화  010-4190-3280 | 운영자 이메일 : hgh0328@naver.com</p>
+                <address>Copyright(c)Seoullandall rights reserved</address>
+            </div>
+            <div class="foot_list">
+                <select name="FAMILY" id="familySite1">
+                    <option value="Fdefult" selected>리조트 내외부</option>
+                    <option value="F1">놀이동산</option>
+                    <option value="F2">서울호텔</option>
+                    <option value="F3">서울관광</option>
+                </select>
+                <select name="리조트" id="Re">
+                    <option value="Rdefult" selected>패밀리 사이트</option>
+                    <option value="R1">서울랜드</option>
+                    <option value="R2">에버랜드</option>
+                    <option value="R3">롯데월드</option>
+                </select>
+            </div>
+            
+        </footer>
+
+
+    </div>
+
+
+
+
+</body>
+
+</html>

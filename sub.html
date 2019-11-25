@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>SeoulLand_ㅎㅈㅎ</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/main.css">
+    <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+    <!--    <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>-->
+    <script type="text/javascript" src="js/prefixfree.min.js"></script>
+    <script type="text/javascript" src="js/jquery-ui-1.10.3.custom.min.js"></script>
+    <script type="text/javascript" src="js/jquery.mousewheel.min.js"></script>
+    <script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
+
+    <!--
+ 아이콘 사용시 활성
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">   
+    <script type="text/javascript" src="js/all.min.js"></script>
+아이콘적용-->
+    <!--
+    <style>
+        
+        
+       
+-->
+    <script>
+        $(function() {
+            $("header").load("header.html");
+            $("#Main").load("nav.html");
+            $("#top_menu").load("top_menu.html");
+            $("footer").load("footer.html");
+
+        });
+        
+        var timer = setInterval(function(){
+		var now= new Date;
+        var day1 = now.getFullYear();
+        var day2 = now.getMonth()+1;
+        var day3 = now.getDay()+1;
+		var hr= now.getHours();
+		var min = now.getMinutes();
+		var sec = now.getSeconds();
+        
+        if(day2>=10){
+            var day2=day2;
+        }
+            else{
+			var day2 = "0" + day2;
+		};
+            if(day3>=10){
+            var day3=day3;
+        }
+            else{
+			var day3 = "0" + day3;
+		};
+		
+		if(hr>=10){
+			var hNum=hr;
+		} else{
+			var hNum = "0" + hr;
+		};
+		
+		if(min>=10){
+			var mNum=min;
+		} else{
+			var mNum = "0"+min;
+		};
+		
+		if(sec>=10){
+			var sNum=sec;
+		} else{
+			var sNum= "0"+sec;
+		};
+            
+            
+        if(hNum<=9 && mNum<=30){
+            document.getElementById("now").innerHTML="오픈 준비중";
+        }
+        else if(hNum>=23){
+             document.getElementById("now").innerHTML="마감";
+            }
+        else{
+             document.getElementById("now").innerHTML="개장중";
+        };
+		
+		document.getElementById("h01").innerHTML=hNum;
+		document.getElementById("h02").innerHTML=mNum;
+		document.getElementById("h03").innerHTML=sNum;
+		document.getElementById("day").innerHTML=day1+"."+day2+"."+day3;
+		
+	
+	},1000);
+        
+        
+
+    </script>
+    
+    <style>
+        .Time_nav{position: relative; margin: 0 auto; text-align: center;  height: 619px; z-index: -10;}
+        .timeVisual{width: 100%; position: absolute; top: 0; left: 0; z-index: -1; margin: 0 auto; margin-top: 300px;}
+        .Time_nav li{float: left; padding: 10px; position: relative; top: 25px; left: 10%;}
+        .Time_nav::after{content: ''; display: block; clear: both;}
+        .btn_Box{position: absolute; right: 10%; top: 5%;}
+        .btn_Box>img{padding: 10px; cursor: pointer;}
+        .Time_nav h2{ color: #014254; font-size: 3vw; position: absolute; top: 28%; left: 40%; font-weight: bold;}
+        #day{position: absolute; top: 55%; left: 44%; color: #df9797; font-size: 2vw;}
+        .timebox1{position: absolute; top: 80%; color: #fff; left: 40%; font-size: 1.5vw;}
+        .timebox2{position: absolute; top: 63%; color: #ffe246; left: 36%; font-size: 4vw; font-weight: bold;}
+        #now{position: absolute; top: 80%; color: #8cddde; left: 55%; font-size: .8vw; font-weight: bold}
+        
+        .Rest_content{position: relative; width: 50%; margin: 0 auto; text-align: center; margin-top: 6%;}
+        .Rest_content h2{font-size: 2vw; font-weight: bold; color: #014254;}
+        .Rest_content>div{float: left; width: 33.33%;}
+        .Rest_content>div>img{width: 80%; margin-top: 10%;}
+        .Rest_content>div>p{font-size: 1vw; padding-top: 1%; color: #014254;}
+        .Rest_content::after{content: ''; display: block; clear: both;}
+        
+        .Use_content{position: relative; width: 100%; margin: 0 auto;  margin-top: 80px; color: #014254;}
+        .Use_content h2{font-size: 3vw; text-align: center;}
+        .Use_content>p{font-size: 1vw; line-height: 60px; text-align: center;}
+        .Use_01{border: 0.1vw solid #8cddde; width: 70%; margin: 0 auto; padding-bottom: 100px; position: relative;}
+        .use_box2 p{position: relative; left: 140px; font-weight: bold; font-size: 1.2vw;line-height: 100px; }
+        .use_box2 span{position: relative; left: 150px; bottom: 25px;font-size: 0.8vw; text-align: left; line-height: 25px}
+        .use_box2 span:last-child{border-bottom: 3px solid #8cddde;padding-bottom: 10px; width: 100%;}
+        .use_box1>img{ position: absolute; left: 4%; top: 25px;}
+        .Use_list li{float: left; width: 33.33%; margin: 0 auto; display: table-cell;}
+        .Use_list li strong{position: absolute; padding-left: 1.2%; padding-top: 5.5%; line-height: 30px}
+        .Use_list li img{padding-top: 15%; padding-left: 10%;}
+        .Use_list:after{content: ''; display: block; clear: both;}
+        
+        .Use_02{position: relative; border: 0.1vw solid #8cddde; width: 70%; margin: 0 auto; padding-bottom: 100px; margin-top: 50px;}
+        .use_box2>img{ position: absolute; left:5%; top: 20px;}
+        .usb_txt p{position: relative; left: 9%; padding: 20px; font-size: 0.9vw; font-weight: bold;}
+        
+        .Use_03{position: relative; border: 0.1vw solid #8cddde; width: 70%; margin: 0 auto; padding-bottom: 100px; margin-top: 50px;}
+        .use_box3>img{ position: absolute; left: 4%; top: 25px;}
+        .usb_txt p{position: relative; left: 9%; padding: 20px; font-size: 0.9vw; font-weight: bold;}
+    </style>
+
+</head>
+
+<body>
+   
+    <div id="wrap">
+        <!-- 헤더구역    -->
+        <header>
+<!--
+            <h1><a href="#logo"><img src="images/header/logo.png" alt="서울랜드로고"></a></h1>
+            <ul class="lnb_menu">
+                <li><a href="login"><img src="images/header/login.png" alt="로그인버튼"></a></li>
+                <li><a href="ticket"><img src="images/header/ticket.png" alt="예매하기"></a></li>
+                <li><a href="serach"><img src="images/header/serach.png" alt="검색"></a></li>
+            </ul>
+-->
+        </header>
+        <div id="Main">
+<!--
+            <ul class="main_menu">
+               <img src="images/menu/menu_bg1.png" alt="메뉴배경" class="menu_bg" width="100%">
+               <div class="menu_under"></div>
+                <li><a href="menu1"><p class="hover_bg"></p>이용가이드</a>
+                <div class="Sub_Menu_List SML1">
+                    <ul class="sub_menu">
+                    <li>이용시간</li>
+                    <li>이용요금</li>
+                    <li>교통정보</li>
+                    <li>주변볼거리</li></ul>
+                </div></li>
+                <li><a href="menu1"><p class="hover_bg"></p>할인&amp;이벤트</a>
+                <div class="Sub_Menu_List SML2">
+                    <ul class="sub_menu">
+                    <li>이달의 혜택</li>
+                    <li>카드사 제휴</li>
+                    <li>제휴혜택</li>
+                    <li>이벤트</li></ul>
+                </div></li>
+                <li><a href="menu1"><p class="hover_bg"></p>어트랙션</a>
+                <div class="Sub_Menu_List SML3">
+                    <ul class="sub_menu">
+                    <li>어트랙션</li>
+                    <li>페스티벌</li>
+                    <li>공연정보</li>
+                    <li>다이닝/쇼핑</li></ul>
+                </div></li>
+                <li><a href="menu1"><p class="hover_bg"></p>맴버십</a>
+                <div class="Sub_Menu_List SML4">
+                    <ul class="sub_menu">
+                    <li>맴버십</li>
+                    <li>공지사항</li>
+                    <li>연간이용안내</li>
+                    <li>고객센터</li></ul>
+                </div></li>
+                <aside>
+                   <img src="images/menu/quick_app.png" alt="메뉴배경" class="menu_qucik">
+                   <h2><strong>앱 다운로드</strong>로<br>더 스마트하게!</h2>
+                   <div>
+                       <p><span>하나.</span>모바일 예매</p>
+                       <p><span>둘.</span>모바일 티켓발권</p>
+                       <p><span>셋.</span>프리패스 예약</p>
+                   </div>
+               </aside>
+                
+            </ul>
+-->
+            
+        </div>
+        <div id="top_menu">
+<!--
+            <ul class="menu_hide">
+                <li class="onview"><a href="#">HOME</a></li>
+                <li class=""><a href="#">이용 가이드</a></li>
+                <li class=""><a href="#">할인&amp;이벤트</a></li>
+                <li class=""><a href="#">어트랙션</a></li>
+                <li class=""><a href="#">맴버십</a></li>
+            </ul>
+-->
+        </div>
+        <!-- 메인  -->
+        <div class="Time_nav">
+            <ul class="Time_nav">
+                <li><img src="images/sub/sub_1/home_btn.png" alt="홈버튼"></li>
+                <li>|</li>
+                <li>이용가이드</li>
+                <li>|</li>
+                <li>파크이용안내</li>
+            </ul>
+            <div class="btn_Box">
+                <img src="images/sub/sub_1/share_btn.png" alt="공유버튼" style="cursor: pointer">
+                <img src="images/sub/sub_1/print_btn.png" alt="프린트버튼" style="cursor: pointer">
+            </div>
+            
+            <h2>파크 운영 시간</h2>
+            <div class="Time_content">
+              <img src="images/sub/sub_1/timeVisual_bg.png" alt="타임비쥬얼" class="timeVisual">
+               <span id="day">2000.01.01</span>
+                <div class="timebox1">
+                    <span>현재시각 </span><span id="h01">00</span> : <span id="h02">00</span> : <span id="h03">00</span>
+                </div>
+                <div class="timebox2">
+                    <span>09:30</span><span> ~ </span><span>22:00</span>
+                </div>
+                <span id="now">현재오픈현황</span>
+            </div>
+        </div>
+        
+        <div class="Rest_content">
+            <h2>오늘의 운휴 시설</h2>
+            <div><img src="images/sub/sub_2/sub2_1.png" alt="터닝메카드"><p>터닝메카드레이싱</p></div>
+            <div><img src="images/sub/sub_2/sub2_2.png" alt="회전목마"><p>빅회전목마</p></div>
+            <div><img src="images/sub/sub_2/sub2_3.png" alt="니나도고카트"><p>니나노고카트</p></div>
+        </div>
+        
+        <div class="Use_content">
+            <h2>파크 이용안내</h2>
+            <p>손님 여러분의 안전하고 즐거운 추억을 위하여 이것만은 꼭 지켜주시기 바랍니다!</p>
+            <div class="Use_01">
+                <div class="use_box1">
+                    <img src="images/sub/sub_3/01.png" alt="01">
+                </div>
+                <div class="use_box2">
+                    <p>이런 물건들은 가지고 입장하실 수 없어요.</p>
+                    <span>안전하고 쾌적한 파크 환경을 위해 다음의 물품들은 입장 시에 제한하고 있으니 양해부탁드립니다.<br></span>
+                    <span>이 외에도 다른 손님에게 방해가 되거나 위험하다고 판단되는 물품은 파크 내에서 제재할 수 있습니다.</span>
+                </div>
+                <ul class="Use_list">
+                    <li><img src="images/sub/sub_3/sub_3_01.png" alt="카메라">
+                    <strong class ="sub_txt">전문 촬영장비<br>(대형 삼각대 및 사다리 등)</strong></li>
+                    <li><img src="images/sub/sub_3/sub_3_02.png" alt="총기류">
+                    <strong class ="sub_txt">각종 무기 혹은 무기처럼 이용<br>가능한 물품(장난감 총, 창, 칼 등)</strong></li>
+                    <li><img src="images/sub/sub_3/sub_3_03.png" alt="드론류">
+                    <strong class ="sub_txt">드론,리모컨으로 조종<br>가능한 장난감 등</strong></li>
+                    <li><img src="images/sub/sub_3/sub_3_04.png" alt="음주">
+                    <strong class ="sub_txt">주류<br>(음주 시 놀이기구 탑승 불가)</strong></li>
+                    <li><img src="images/sub/sub_3/sub_3_05.png" alt="캠핑">
+                    <strong class ="sub_txt">버너, 접의식 의자 캠핑용품<br>(조리 및 취사 불가)</strong></li>
+                    <li><img src="images/sub/sub_3/sub_3_06.png" alt="이동수단">
+                    <strong class ="sub_txt">자전거, 인라인, 스쿠터, 킥보드,<br>전동휠, 어린이 자동차<br>※3.1부터 킥보드 보관이 불가합니다.</strong></li>
+                </ul>
+            </div>
+            
+            <div class="Use_02">
+                <div class="use_box2">
+                    <img src="images/sub/sub_3/02.png" alt="02">
+                </div>
+                <div class="use_box2">
+                    <p>다음의 행위들은 파크내에서 금지되어 있습니다.</p>
+                    <span>서울랜드는 다수의 손님이 함께 즐기는 공간입니다.<br></span>
+                    <span>다른 손님에게 불쾌감이나 불편함을 줄 수 있는 다음의 행위들은 파크 내에서 하실 수 없습니다.<br></span>
+                    <span>이외에도 다른 손님에게 방해가 되거나 위험하다고 판단되는 행위는 파크내에서 제재할 수 있습니다.</span>
+                </div>
+                    <div class="usb_txt">
+                        <p>타인에게 티켓을 양도 및 교환하고 그에 따른 금전거래를 하는 행동</p>
+                        <p>물품의 진열 및 판매</p>
+                        <p>전단지, 질문지, 설문지 배포</p>
+                        <p>집회 및 연설, 허가되지 않은 이벤트 개최</p>
+                        <p>웨딩 촬영 및 허가되지 않은 각종 상업적 목적의 촬용</p>
+                        <p>얼굴을 가리거나 다른 손님에게 위협 또는 불쾌감을 줄 수 있는 수준의 코스튬 플레이</p>
+                        <p>코스튬플레이를 한 상태에서 서울랜드 연기자인 것처럼 다른 손님과 사진을 찍어 금전을 버는 행위</p>
+                    </div>  
+            </div>
+            
+            <div class="Use_03">
+                <div class="use_box2">
+                    <img src="images/sub/sub_3/03.png" alt="03">
+                </div>
+                <div class="use_box2">
+                    <p>어트랙션 이용시 지켜주세요.</p>
+                    <span>손님 여러분의 안전을 위해 다음 내용들은 유의해 주시기 바랍니다.</span>
+                </div>
+                    <div class="usb_txt">
+                        <p>음식물은 다 드신 후에 이용해 주시기 바랍니다.</p>
+                        <p>탑승 중에는 카메라, 셀카봉, 핸드폰 사용을 삼가해 주시기 바랍니다.</p>
+                        <p>어트랙션별 탑승기준을 준수해 주시기 바랍니다.</p>
+                        <p>어트랙션별 탑승기준은 이 곳에서 보다 자세하게 검색 혹은 확인하실 수 있습니다.</p>
+                        <p>손님 여러분의 안전을 위한 센서로 인해 어트랙션이 급작스럽게 멈출 수 있습니다.</p>
+                        <p>어트랙션 탑승 도중 멈추더라도 당황하지 마시고 직원 안내를 기다려 주세요.</p>
+                        <p>현장 및 기상상황에 따라 예고 없이 어트랙션 운행이 중단될 수 있습니다.</p>
+                        <p>음주 후 어트랙션 탑승은 불가합니다.</p>
+                    </div>  
+            </div>
+        </div>
+        
+        <footer><!--<div class="foot_sns">
+                <ul>
+                    <li class="sns_facebook"><img src="images/footer/footer_facebook.png" alt="페이스북"></li>
+                    <li class="sns_instargram"><img src="images/footer/footer_instargram.png" alt="인스타그램"></li>
+                    <li class="sns_twiter"><img src="images/footer/footer_twiter.png" alt="트위터"></li>
+                    <li class="sns_Tstory"><img src="images/footer/footer_Tstory.png" alt="티스토리"></li>
+                    <li class="sns_youtube"><img src="images/footer/footer_youtube.png" alt="유튜브"></li>
+                </ul>
+            </div>
+            <div class="foot_txt">
+                <a href="#"><img src="images/footer/footer_logo.png" alt=""></a>
+                <p>주소 : 13829 경기도 과천시 광명로 181(주)서울랜드 | 대표이사 : 홍정화 |
+                    사업자등록번호 : 123-56-7890 | 통신판매업신고번화 : 서울 제 1호</p>
+                <p>안내전화 “ 010-4190-3280 | 개인정보관리 책임자 : IIBI팀 홍정화 | 운영자 이메일 : hgh0328@naver.com</p>
+                <address>Copyright(c)Seoullandall rights reserved</address>
+            </div>
+            <div class="foot_list">
+                <select name="FAMILY" id="familySite1">
+                    <option value="Fdefult" selected>리조트 내 시설</option>
+                    <option value="F1">놀이동산</option>
+                    <option value="F2">서울호텔</option>
+                    <option value="F3">서울관광</option>
+                </select>
+                <select name="리조트" id="Re">
+                    <option value="Rdefult" selected>패밀리 사이트</option>
+                    <option value="R1">서울랜드</option>
+                    <option value="R2">에버랜드</option>
+                    <option value="R3">롯데월드</option>
+                </select>
+            </div>
+            <div class="top">
+                <p class="top_btn">TOP</p>
+                <p class="top_bar"> | </p>
+--></footer>
+
+
+    </div>
+
+
+
+</body>
+<style>
+   
+</style>
+
+</html>
